@@ -1,3 +1,15 @@
+modsecurity-crs (3.3.7-1+deb13u2) trixie; urgency=medium
+
+  * Fixes CVE-2026-33691
+
+ -- Ervin Hegedüs <airween@gmail.com>  Sun, 29 Mar 2026 18:29:12 +0200
+
+modsecurity-crs (3.3.7-1+deb13u1) trixie-security; urgency=medium
+
+  * Fixes CVE-2026-21876 (Closes: #1125084)
+
+ -- Ervin Hegedüs <airween@gmail.com>  Sat, 10 Jan 2026 17:00:48 +0100
+
 modsecurity-crs (3.3.7-1) unstable; urgency=medium
 
   * New upstream version 3.3.7
