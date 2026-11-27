@@ -1,0 +1,24 @@
+modsecurity-crs for Debian
+--------------------------
+
+Updating to 3.0.0
+-----------------
+
+OWASP Core Rule Set 3.x is incompatible with 2.x and changes the directory
+layout for the rule files. You should update the way rule files are Included.
+
+To ease this job from 3.0.0-3 the rule files you may want to modify were moved
+to /etc/modsecurity/crs/. Those are:
+crs-setup.conf
+REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf
+RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf
+
+A new file (/usr/share/modsecurity-crs/owasp-crs.load) includes those files,
+and the rest of CRS rules, in the right order.
+
+Including that file in your configuration should be enough to use CRS.
+Modsecurity-apache, from 2.9.1-2, already does that for you. Everything
+should work out of the box.
+
+
+ -- Alberto Gonzalez Iniesta <agi@inittab.org>  Wed, 21 Dec 2016 12:36:03 +0100

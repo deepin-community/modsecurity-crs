@@ -1,0 +1,40 @@
+Index: modsecurity-crs/util/virtual-patching/arachni2modsec.pl
+===================================================================
+--- modsecurity-crs.orig/util/virtual-patching/arachni2modsec.pl	2020-08-16 20:21:19.863661332 +0200
++++ modsecurity-crs/util/virtual-patching/arachni2modsec.pl	2020-08-16 20:21:19.863661332 +0200
+@@ -1,4 +1,4 @@
+-#!/opt/local/bin/perl -T
++#!/usr/bin/perl -T
+ 
+ #############################################
+ # -=[ Virtual Patching Converter Script ]=- #
+Index: modsecurity-crs/util/virtual-patching/zap2modsec.pl
+===================================================================
+--- modsecurity-crs.orig/util/virtual-patching/zap2modsec.pl	2020-08-16 20:21:19.863661332 +0200
++++ modsecurity-crs/util/virtual-patching/zap2modsec.pl	2020-08-16 20:21:19.863661332 +0200
+@@ -1,4 +1,4 @@
+-#!/opt/local/bin/perl -T
++#!/usr/bin/perl -T
+ 
+ #############################################
+ # -=[ Virtual Patching Converter Script ]=- #
+Index: modsecurity-crs/util/regexp-assemble/regexp-assemble.pl
+===================================================================
+--- modsecurity-crs.orig/util/regexp-assemble/regexp-assemble.pl	2020-08-16 20:21:19.863661332 +0200
++++ modsecurity-crs/util/regexp-assemble/regexp-assemble.pl	2020-08-16 20:21:19.863661332 +0200
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env perl
++#!/usr/bin/perl
+ #
+ # Create one regexp from a set of regexps.
+ # Regexps can be submitted via standard input, one per line.
+Index: modsecurity-crs/util/regexp-assemble/regexp-assemble-v2.pl
+===================================================================
+--- modsecurity-crs.orig/util/regexp-assemble/regexp-assemble-v2.pl	2020-08-16 20:21:19.863661332 +0200
++++ modsecurity-crs/util/regexp-assemble/regexp-assemble-v2.pl	2020-08-16 20:21:19.863661332 +0200
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env perl
++#!/usr/bin/perl
+ #
+ # Create one regexp from a set of regexps.
+ # Regexps can be submitted via standard input, one per line.
