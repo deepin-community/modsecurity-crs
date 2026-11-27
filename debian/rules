@@ -1,4 +1,28 @@
 #!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
 
 %:
 	dh $@
+
+override_dh_compress:
+	dh_compress --exclude=common.c
+
+override_dh_auto_install:
+	cp crs-setup.conf.example debian/modsecurity-crs/etc/modsecurity/crs/crs-setup.conf
+	cp -r rules/ debian/modsecurity-crs/usr/share/modsecurity-crs/
+	mv debian/modsecurity-crs/usr/share/modsecurity-crs/rules/REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf.example debian/modsecurity-crs/etc/modsecurity/crs/REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf
+	mv debian/modsecurity-crs/usr/share/modsecurity-crs/rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf.example debian/modsecurity-crs/etc/modsecurity/crs/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf
+	cp debian/owasp-crs.load debian/modsecurity-crs/usr/share/modsecurity-crs/owasp-crs.load
+	cp -r util/ debian/modsecurity-crs/usr/share/modsecurity-crs/
+
+override_dh_fixperms:
+	dh_fixperms
+	find debian/modsecurity-crs/usr/share/modsecurity-crs/util \( -name '*.c' -o -name '*.h' -o -name '*.tests' -o -name '*.yaml' \) -exec chmod a-x {} \;
